@@ -35,7 +35,7 @@ def webhook():
        r.headers['Content-Type'] = 'application/json'
        return r
     except  Exception as e:
-        print(srt(e))
+        print(str(e))
 
 
 def processRequest(req):
