@@ -23,6 +23,7 @@ app = Flask(__name__)
 def webhook():
     req = request.get_json(silent=True, force=True)
 
+    print(req);
     print("Request:")
     print(json.dumps(req, indent=4))
 
