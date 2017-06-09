@@ -36,6 +36,8 @@ def webhook():
        return r
     except  Exception as e:
         print(str(e))
+        var = traceback.format_exc()
+        print(str(var))
 
 
 def processRequest(req):
