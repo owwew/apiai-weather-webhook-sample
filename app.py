@@ -23,17 +23,19 @@ app = Flask(__name__)
 def webhook():
     req = request.get_json(silent=True, force=True)
 
-    print(req);
     print("Request:")
     print(json.dumps(req, indent=4))
+    
+    try:
+       res = processRequest(req)
 
-    res = processRequest(req)
-
-    res = json.dumps(res, indent=4)
-    # print(res)
-    r = make_response(res)
-    r.headers['Content-Type'] = 'application/json'
-    return r
+       res = json.dumps(res, indent=4)
+       # print(res)
+       r = make_response(res)
+       r.headers['Content-Type'] = 'application/json'
+       return r
+    except  Exception as e:
+        print(srt(e))
 
 
 def processRequest(req):
