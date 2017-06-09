@@ -48,7 +48,7 @@ def processRequest(req):
         return doYahooForecast(req)
     elif req.get("result").get("action") == "googleGeocoder":
         return doGoogleGeoCoder(req)
-    else
+    else:
          return {}
 
 def doGoogleGeocoder(req):
