@@ -22,12 +22,13 @@ app = Flask(__name__)
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
-    req = request.get_json(silent=True, force=True)
-
-    print("Request:")
-    print(json.dumps(req, indent=4))
     
     try:
+       req = request.get_json(silent=True, force=True)
+
+       print("Request:")
+       print(json.dumps(req, indent=4))
+    
        res = processRequest(req)
 
        res = json.dumps(res, indent=4)
@@ -35,15 +36,26 @@ def webhook():
        r = make_response(res)
        r.headers['Content-Type'] = 'application/json'
        return r
+    #ludo !!!
     except  Exception as e:
         print(str(e))
         var = traceback.format_exc()
         print(str(var))
 
-
+#a changer pour appelrer google
 def processRequest(req):
-    if req.get("result").get("action") != "yahooWeatherForecast":
-        return {}
+    if req.get("result").get("action") == "yahooWeatherForecast":
+        return doYahooForecast(req)
+    elif req.get("result").get("action") == "googleGeocoder":
+        return doGoogleGeoCoder(req)
+    else
+         return {}
+
+def doGoogleGeocoder(req):
+    print("doGoogleGeocoder")
+    return {}
+
+def doYahooForecast(req):
     baseurl = "https://query.yahooapis.com/v1/public/yql?"
     yql_query = makeYqlQuery(req)
     if yql_query is None:
