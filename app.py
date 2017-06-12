@@ -47,8 +47,8 @@ def processRequest(req):
     if req.get("result").get("action") == "yahooWeatherForecast":
         return doYahooForecast(req)
     elif req.get("result").get("action") == "googleGeocoder":
-         print("doGoogleGeocoder")
-        return doGoogleGeocoder(req)
+        { print("doGoogleGeocoder")
+        return doGoogleGeocoder(req)}
     else:
          return {}
 
