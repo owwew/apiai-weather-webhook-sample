@@ -57,7 +57,7 @@ def doGoogleGeocoder(req):
     return {}
 
 def affichergoogle():
-    return {print("la fonction marche")}
+    return print("True")
 
 
 def doYahooForecast(req):
