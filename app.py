@@ -67,10 +67,10 @@ def locu_serch(query):
     #la variable addresss recoit la ville a chercher
     url = "http://maps.googleapis.com/maps/api/geocode/json?"
     address=query
-	final_url = url + "&address=" + address #url + le mot "address=" + "la ville" a chercher
-	response = urllib2.urlopen(final_url)
-	data = json.loads(response.read())
-	return data
+    final_url = url + "&address=" + address #url + le mot "address=" + "la ville" a chercher
+    response = urllib2.urlopen(final_url)
+    data = json.loads(response.read())
+    return data
     
 
 def doYahooForecast(req):
