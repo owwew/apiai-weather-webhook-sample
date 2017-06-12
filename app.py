@@ -54,33 +54,13 @@ def processRequest(req):
 #case chercher une adresse fonction [doGoogleGeocoder]
 def doGoogleGeocoder(req):
     print("doGoogleGeocoder") #test a supprimer apres
-    url = "http://maps.googleapis.com/maps/api/geocode/json?"
+    #url = "http://maps.googleapis.com/maps/api/geocode/json?"
     #locale = getthelocal(req)
     #locu_serch(locale)
     return {
         "speech": "premiere ligne \n 2eme ligne \n 3eme ligne"
     }
 
-#python 2.7 pour chercher l'adresse d'un local
-def locu_serch(query): 
-    #la variable addresss recoit la ville a chercher
-	address=query
-	final_url = url + "&address=" + address #url + le mot "address=" + "la ville" a chercher
-	response = urllib2.urlopen(final_url)
-	data = json.loads(response.read())
-	print (data)
-    speech = data
-
-#get le nom du local from API.AI
-def getthelocal(req):
-     result = req.get("result")
-    parameters = result.get("parameters")
-    local = parameters.get("lieu")
-    if local is None:
-        return None
-    return local
-
-    
 
 def doYahooForecast(req):
     baseurl = "https://query.yahooapis.com/v1/public/yql?"
