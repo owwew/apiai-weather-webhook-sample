@@ -65,6 +65,7 @@ def doGoogleGeocoder(req):
 #python 2.7 pour chercher l'adresse d'un local
 def locu_serch(query): 
     #la variable addresss recoit la ville a chercher
+    url = "http://maps.googleapis.com/maps/api/geocode/json?"
 	address=query
 	final_url = url + "&address=" + address #url + le mot "address=" + "la ville" a chercher
 	response = urllib2.urlopen(final_url)
