@@ -53,7 +53,10 @@ def processRequest(req):
 
 def doGoogleGeocoder(req):
     print("doGoogleGeocoder")
-    return {}
+    return {
+        "speech": "c'est un test"
+    }
+
 
 def doYahooForecast(req):
     baseurl = "https://query.yahooapis.com/v1/public/yql?"
