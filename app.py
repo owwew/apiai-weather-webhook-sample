@@ -11,6 +11,7 @@ from urllib.error import HTTPError
 import json
 import os
 import traceback
+import urllib2,urllib
 
 from flask import Flask
 from flask import request
