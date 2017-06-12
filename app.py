@@ -59,7 +59,7 @@ def doGoogleGeocoder(req):
     #locale = getthelocal(req)
     addresse = locu_serch("paris")
     return {
-        "speech": addresse
+        "speech": addresse,
     }
 
 
