@@ -42,7 +42,7 @@ def webhook():
         var = traceback.format_exc()
         print(str(var))
 
-#a changer pour appelrer google
+#a changer pour appelrer google (done!! )
 def processRequest(req):
     if req.get("result").get("action") == "yahooWeatherForecast":
         return doYahooForecast(req)
@@ -53,7 +53,12 @@ def processRequest(req):
 
 def doGoogleGeocoder(req):
     print("doGoogleGeocoder")
+    aff= affichergoogle(req)
     return {}
+
+def affichergoogle():
+    return {print("la fonction marche")}
+
 
 def doYahooForecast(req):
     baseurl = "https://query.yahooapis.com/v1/public/yql?"
