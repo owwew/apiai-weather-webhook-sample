@@ -71,7 +71,13 @@ def locu_serch(query):
     final_url = url + "&address=" + address #url + le mot "address=" + "la ville" a chercher
     response = urllib2.urlopen(final_url)
     data =  json.loads(response.read()) #"la fonction google marche tres bien" 
-    return data
+    add = "adresse : "   
+    x=0
+    for item in data["results"][0]["address_components"]:
+        add = add + "\n" + data["results"][0]["address_components"][x]["long_name"]
+        x=x+1
+    return add
+    
     
 
 def doYahooForecast(req):
