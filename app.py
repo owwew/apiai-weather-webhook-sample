@@ -59,11 +59,13 @@ def doGoogleGeocoder(req):
     #to add here
     result = req.get("result")
     parameters = result.get("parameters")
-    city = parameters.get("lieu")
-    if city is None:
+    city = parameters.get("lieu")       #get le lieu de l'API.AI et le stocker dans "city"
+    if city is None:                    #si le lieu n'existe pas , ne retourne rien 
         return None
-    #to add here
-    addresse = locu_serch(city)
+                                        #sinon on affiche l'adresse du lieu.
+                                        #la fonction locu_serch recoit comme param le lieu qu'on cherche son adresse
+    
+    addresse = locu_serch(city) 
     return {
         "speech": addresse,
     }
@@ -82,7 +84,7 @@ def locu_serch(query):
     for item in data["results"][0]["address_components"]:
         add = add + "\n" + data["results"][0]["address_components"][x]["long_name"]
         x=x+1
-    return add
+    return address#add
     
     
 
