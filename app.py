@@ -57,7 +57,7 @@ def doGoogleGeocoder(req):
     print("doGoogleGeocoder") #test a supprimer apres
     url = "http://maps.googleapis.com/maps/api/geocode/json?"
     #locale = getthelocal(req)
-    addresse = locu_serch("paris")
+    addresse = locu_serch("jalios")
     return {
         "speech": addresse,
     }
