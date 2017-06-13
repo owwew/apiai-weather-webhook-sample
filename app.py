@@ -63,7 +63,7 @@ def doGoogleGeocoder(req):
     if city is None:
         return None
     #to add here
-    addresse = locu_serch(lieu)
+    addresse = locu_serch(city)
     return {
         "speech": addresse,
     }
