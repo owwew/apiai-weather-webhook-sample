@@ -70,7 +70,7 @@ def locu_serch(query):
     address=query
     final_url = url + "&address=" + address #url + le mot "address=" + "la ville" a chercher
     response = urllib2.urlopen(final_url)
-    data = "la fonction google marche tres bien" # json.loads(response.read())
+    data =  json.loads(response.read()) #"la fonction google marche tres bien" 
     return data
     
 
