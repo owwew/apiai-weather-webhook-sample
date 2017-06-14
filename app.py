@@ -99,7 +99,7 @@ def locu_serch(query):
     for item in data["results"][0]["address_components"]:
         add = add + "\n" + data["results"][0]["address_components"][x]["long_name"]
         x=x+1
-    return addresse #add
+    return address #add
     
     
 
