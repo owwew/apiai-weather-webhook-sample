@@ -49,8 +49,13 @@ def processRequest(req):
         return doYahooForecast(req)
     elif req.get("result").get("action") == "googleGeocoder":
         return doGoogleGeocoder(req)
+    elif req.get("result").get("action") == "wikipidiasearch":
+        return dowikipidiasearch(req)
     else:
          return {}
+def dowikipidiasearch(query):
+    print("wikipidia marche")
+    return{}
         
 #fonction pour recuperer selment l'adresse de la phrase     
 def get_neccesaire(query):
