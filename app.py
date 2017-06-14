@@ -84,7 +84,8 @@ def dowikipidiasearch(query):
     parameters = result.get("resolvedQuery")
     search = get_neccesaire_wikipidia(parameters)
     search2 = search.replace(' ', '%20')
-     finalsearch = func(0)          #la variable adresse recoit le vrais adresse (exp: 14 rue paul dautier, 78140, France)
+    search3 = wiki_serch(search2)
+    finalsearch = func(0)          #la variable adresse recoit le vrais adresse (exp: 14 rue paul dautier, 78140, France)
     return {
         "speech": finalsearch,
     }
