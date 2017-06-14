@@ -81,7 +81,7 @@ def doGoogleGeocoder(req):
     cityt = city.replace(' ', '%20')
     #print("voila l'adresse a chercher:") #test a supprimer apres
     #print(city)                          #test a supprimer apres
-    addresse = locu_serch(city)          #la variable adresse recoit le vrais adresse (exp: 14 rue paul dautier, 78140, France)
+    addresse = locu_serch(cityt)          #la variable adresse recoit le vrais adresse (exp: 14 rue paul dautier, 78140, France)
     return {
         "speech": addresse,
     }
