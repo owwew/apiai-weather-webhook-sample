@@ -78,7 +78,7 @@ def doGoogleGeocoder(req):
                                         #sinon on affiche l'adresse du lieu.
                                         #la fonction locu_serch recoit comme param le lieu qu'on cherche son adresse
     
-    city = get_neccesaire(parameters)
+    city = get_neccesaire("parameters")
     print("voila l'adresse a chercher: ")
     print(city)
     addresse = locu_serch(city) 
