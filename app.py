@@ -58,8 +58,8 @@ def get_neccesaire(query):
     ici=phrase.find("adresse")     #chercher le mor cle "adresse" (ici recoit position du mot adresse)
     ici= ici+10                     #eplacer le cursus +8 pour passer au mot suivant 
     icii=phrase[ici:]              #prendre toute la chaine de caractere qui suit le mot adresse (ca doit etre l'adresse)
-    print("le necessaire est ")    #trest pour voir si ca marche  
-    print(icii)                    #test si ca marche 
+    #print("le necessaire est ")    #trest pour voir si ca marche  
+    #print(icii)                    #test si ca marche 
     return (icii)
 
 #case chercher une adresse fonction [doGoogleGeocoder]
@@ -68,8 +68,8 @@ def doGoogleGeocoder(req):
     url = "http://maps.googleapis.com/maps/api/geocode/json?"
     result = req.get("result")
     parameters = result.get("resolvedQuery")
-    print("j'ai eu ca de l'api.ai")
-    print(parameters)                    #good
+    #print("j'ai eu ca de l'api.ai")
+    #print(parameters)                    #good
     #city = parameters.get("location")   #get le lieu de l'API.AI et le stocker dans "city"
     #if city is None:                    #si le lieu n'existe pas , ne retourne rien 
      #   return None
@@ -78,8 +78,8 @@ def doGoogleGeocoder(req):
     
    
     city = get_neccesaire(parameters)    #la variable "city" recoir la chaine de caractere de l'adresse from ["get_neccesaire"]
-    print("voila l'adresse a chercher:") #test a supprimer apres
-    print(city)                          #test a supprimer apres
+    #print("voila l'adresse a chercher:") #test a supprimer apres
+    #print(city)                          #test a supprimer apres
     addresse = locu_serch(city)          #la variable adresse recoit le vrais adresse (exp: 14 rue paul dautier, 78140, France)
     return {
         "speech": addresse,
