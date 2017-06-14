@@ -60,8 +60,6 @@ def get_neccesaire_wikipidia(query):
     ici=phrase.find("quoi")
     ici= ici+5
     icii=phrase[ici:]
-    print ici
-    print icii
     return (icii)
 
 def wiki_serch(query):     
