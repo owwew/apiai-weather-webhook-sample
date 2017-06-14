@@ -53,9 +53,44 @@ def processRequest(req):
         return dowikipidiasearch(req)
     else:
          return {}
+        
+        
+def get_neccesaire_wikipidia(query):
+    phrase=query
+    ici=phrase.find("quoi")
+    ici= ici+5
+    icii=phrase[ici:]
+    print ici
+    print icii
+    return (icii)
+
+def wiki_serch(query):     
+#la variable addresss recoit la ville a chercher   
+    url = "https://fr.wikipedia.org/w/api.php?action=opensearch&search="
+    address=query
+    final_url = url +""+ address #url + le mot "RIEN" + "le terme" a chercher
+    # final_url = url + address
+    response = urllib2.urlopen(final_url)
+    data = json.loads(response.read())
+    return data[2]
+
+def func(query):
+    test=wiki_serch(lieu)
+    lol = [i.split(',') for i in test]
+    return test[query]
+
 def dowikipidiasearch(query):
-    print("wikipidia marche")
-    return{}
+    print("wikipidia marche") #test a supprimer
+    url = "https://fr.wikipedia.org/w/api.php?action=opensearch&search="
+    result = req.get("result")
+    parameters = result.get("resolvedQuery")
+    search = get_neccesaire_wikipidia(parameters)
+    search2 = search.replace(' ', '%20')
+     finalsearch = func(0)          #la variable adresse recoit le vrais adresse (exp: 14 rue paul dautier, 78140, France)
+    return {
+        "speech": finalsearch,
+    }
+ 
         
 #fonction pour recuperer selment l'adresse de la phrase     
 def get_neccesaire(query):
