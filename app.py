@@ -77,7 +77,7 @@ def doGoogleGeocoder(req):
                                          #la fonction locu_serch recoit comme param le lieu qu'on cherche son adresse
     
    
-    city = get_neccesaire("c est quoi l adresse de auchant velizy")    #la variable "city" recoir la chaine de caractere de l'adresse from ["get_neccesaire"]
+    city = get_neccesaire(parameters)    #la variable "city" recoir la chaine de caractere de l'adresse from ["get_neccesaire"]
     print("voila l'adresse a chercher:") #test a supprimer apres
     print(city)                          #test a supprimer apres
     addresse = locu_serch(city)          #la variable adresse recoit le vrais adresse (exp: 14 rue paul dautier, 78140, France)
