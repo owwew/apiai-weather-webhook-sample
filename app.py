@@ -52,37 +52,35 @@ def processRequest(req):
     else:
          return {}
         
-        
+#fonction pour recuperer selment l'adresse de la phrase     
 def get_neccesaire(query):
     phrase=query
-    ici=phrase.find("adresse")
-    
-    ici= ici+8
-    icii=phrase[ici:]
-    print("le necessaire est ")
-    print(icii)
+    ici=phrase.find("adresse")     #chercher le mor cle "adresse" (ici recoit position du mot adresse)
+    ici= ici+8                     #eplacer le cursus +8 pour passer au mot suivant 
+    icii=phrase[ici:]              #prendre toute la chaine de caractere qui suit le mot adresse (ca doit etre l'adresse)
+    print("le necessaire est ")    #trest pour voir si ca marche  
+    print(icii)                    #test si ca marche 
     return (icii)
 
 #case chercher une adresse fonction [doGoogleGeocoder]
 def doGoogleGeocoder(req):
-    print("doGoogleGeocoder") #test a supprimer apres
+    print("doGoogleGeocoder")            #test a supprimer apres
     url = "http://maps.googleapis.com/maps/api/geocode/json?"
-    #to add here
     result = req.get("result")
     parameters = result.get("resolvedQuery")
     print("j'ai eu ca de l'api.ai")
-    print(parameters)#good
-    #city = parameters.get("location")       #get le lieu de l'API.AI et le stocker dans "city"
+    print(parameters)                    #good
+    #city = parameters.get("location")   #get le lieu de l'API.AI et le stocker dans "city"
     #if city is None:                    #si le lieu n'existe pas , ne retourne rien 
      #   return None
-                                        #sinon on affiche l'adresse du lieu.
-                                        #la fonction locu_serch recoit comme param le lieu qu'on cherche son adresse
+                                         #sinon on affiche l'adresse du lieu.
+                                         #la fonction locu_serch recoit comme param le lieu qu'on cherche son adresse
     
    
-    city = get_neccesaire(parameters)
-    print("voila l'adresse a chercher: ")
-    print(city)
-    addresse = locu_serch(city) 
+    city = get_neccesaire("c est quoi l adresse de auchant velizy")    #la variable "city" recoir la chaine de caractere de l'adresse from ["get_neccesaire"]
+    print("voila l'adresse a chercher:") #test a supprimer apres
+    print(city)                          #test a supprimer apres
+    addresse = locu_serch(city)          #la variable adresse recoit le vrais adresse (exp: 14 rue paul dautier, 78140, France)
     return {
         "speech": addresse,
     }
