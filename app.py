@@ -59,7 +59,8 @@ def get_neccesaire(query):
     
     ici= ici+8
     icii=phrase[ici:]
-    #print(ici)
+    print("le necessaire est ")
+    print(icii)
     return (icii)
 
 #case chercher une adresse fonction [doGoogleGeocoder]
