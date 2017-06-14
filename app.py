@@ -88,18 +88,18 @@ def doGoogleGeocoder(req):
 
 #python 2.7 pour chercher l'adresse d'un local
 def locu_serch(query): 
-    #la variable addresss recoit la ville a chercher
+                                            #la variable addresss recoit la ville a chercher
     url = "http://maps.googleapis.com/maps/api/geocode/json?"
     address=query
     final_url = url + "&address=" + address #url + le mot "address=" + "la ville" a chercher
     response = urllib2.urlopen(final_url)
-    data =  json.loads(response.read()) #"la fonction google marche tres bien" 
+    data =  json.loads(response.read())     #"la fonction google marche tres bien" 
     add = "adresse : "   
     x=0
     for item in data["results"][0]["address_components"]:
         add = add + "\n" + data["results"][0]["address_components"][x]["long_name"]
         x=x+1
-    return add
+    return addresse #add
     
     
 
