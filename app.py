@@ -82,7 +82,7 @@ def dowikipidiasearch(query):
     url = "https://fr.wikipedia.org/w/api.php?action=opensearch&search="
     result = req.get("result")
     parameters = result.get("resolvedQuery")
-    search = get_neccesaire_wikipidia(parameters) #prendre que le nécessaire
+    search = get_neccesaire_wikipidia(parameters) #prendre que le necessaire
     search2 = search.replace(' ', '%20') #enlever les espaces
     finalsearch = func(search2)          #la variable adresse recoit le vrais adresse (exp: 14 rue paul dautier, 78140, France)
     return {
