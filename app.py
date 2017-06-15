@@ -77,7 +77,7 @@ def func(query):
     lol = [i.split(',') for i in test]
     return test[0]
 
-def dowikipidiasearch(query):
+def dowikipidiasearch(req):
     print("wikipidia marche") #test a supprimer
     url = "https://fr.wikipedia.org/w/api.php?action=opensearch&search="
     result = req.get("result")
