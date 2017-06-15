@@ -73,19 +73,18 @@ def wiki_serch(query):
     return data[2]
 
 def func(query):
-    test=wiki_serch(lieu)
+    test=wiki_serch(query)
     lol = [i.split(',') for i in test]
-    return test[query]
+    return test[0]
 
 def dowikipidiasearch(query):
     print("wikipidia marche") #test a supprimer
     url = "https://fr.wikipedia.org/w/api.php?action=opensearch&search="
     result = req.get("result")
     parameters = result.get("resolvedQuery")
-    search = get_neccesaire_wikipidia(parameters)
-    search2 = search.replace(' ', '%20')
-    search3 = wiki_serch(search2)
-    finalsearch = func(0)          #la variable adresse recoit le vrais adresse (exp: 14 rue paul dautier, 78140, France)
+    search = get_neccesaire_wikipidia(parameters) #prendre que le nécessaire
+    search2 = search.replace(' ', '%20') #enlever les espaces
+    finalsearch = func(search2)          #la variable adresse recoit le vrais adresse (exp: 14 rue paul dautier, 78140, France)
     return {
         "speech": finalsearch,
     }
