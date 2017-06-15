@@ -58,7 +58,7 @@ def processRequest(req):
 def get_neccesaire_wikipidia(query):
     phrase=query
     ici=phrase.find("quoi")
-    ici= ici+5
+    ici= ici+8
     icii=phrase[ici:]
     return (icii)
 
