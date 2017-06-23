@@ -61,8 +61,8 @@ def get_neccesaire_jcms(query):
     ici=phrase.find("jcms")
     ici= ici+5
     icii=phrase[ici:]
-    print(ici)
-    print (icii)
+    #print(ici)
+    #print (icii)
     return (icii)  
 
 def dojcmssearch(req):
@@ -71,6 +71,7 @@ def dojcmssearch(req):
     parameters = result.get("resolvedQuery")
     search = get_neccesaire_jcms(parameters) #prendre que le necessaire
     search2 = search.replace(' ', '%20') #enlever les espaces
+    print (search)
     print (search2)
     return{}
         
