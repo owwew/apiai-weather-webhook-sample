@@ -56,9 +56,22 @@ def processRequest(req):
     else:
          return {}
         
-        
+def get_neccesaire_jcms(query):
+    phrase=query
+    ici=phrase.find("jcms")
+    ici= ici+5
+    icii=phrase[ici:]
+    print(ici)
+    print (icii)
+    return (icii)  
+
 def dojcmssearch(req):
     print ("dojcmssearch")
+    result = req.get("result")
+    parameters = result.get("resolvedQuery")
+    search = get_neccesaire_jcms(parameters) #prendre que le necessaire
+    search2 = search.replace(' ', '%20') #enlever les espaces
+    print search2
     return{}
         
 def get_neccesaire_wikipidia(query):
