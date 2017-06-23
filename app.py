@@ -51,9 +51,15 @@ def processRequest(req):
         return doGoogleGeocoder(req)
     elif req.get("result").get("action") == "wikipidiasearch":
         return dowikipidiasearch(req)
+    elif req.get("result").get("action") == "jcmssearch":
+        return dojcmssearch(req)
     else:
          return {}
         
+        
+def dojcmssearch(req):
+    print 'dojcmssearch'
+    return{}
         
 def get_neccesaire_wikipidia(query):
     phrase=query
