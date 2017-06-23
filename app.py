@@ -71,7 +71,7 @@ def dojcmssearch(req):
     parameters = result.get("resolvedQuery")
     search = get_neccesaire_jcms(parameters) #prendre que le necessaire
     search2 = search.replace(' ', '%20') #enlever les espaces
-    print search2
+    print (search2)
     return{}
         
 def get_neccesaire_wikipidia(query):
