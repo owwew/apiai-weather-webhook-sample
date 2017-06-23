@@ -58,7 +58,7 @@ def processRequest(req):
         
         
 def dojcmssearch(req):
-    print 'dojcmssearch'
+    print ("dojcmssearch")
     return{}
         
 def get_neccesaire_wikipidia(query):
