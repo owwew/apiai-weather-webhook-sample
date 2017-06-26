@@ -101,10 +101,10 @@ def dojcmssearch(req):
     xmldoc = ET.fromstring(get_web)
     f = StringIO.StringIO(get_web)
     test = etree.parse(f)
-    phrase = "voici les titres que je trouve"
+    phrase = "voici les titres que je trouve: \n\n"
     for titre in test.find("data").xpath("/dataset/data/field[@name='title']/text()"):
         print (titre.encode('utf-8'))
-        phrase = phrase + "\n; " + titre
+        phrase = phrase + "\n " + titre
     return {
         "speech": phrase.encode('utf-8'),
     }
