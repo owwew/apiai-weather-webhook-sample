@@ -18,26 +18,21 @@ from flask import Flask
 from flask import request
 from flask import make_response
 
-yum install libxslt-devel libxml2-devel
-wget http://pypi.python.org/packages/source/l/lxml/lxml-2.2.2.tar.gz
-tar xzf lxml-2.2.2.tar.gz 
-cd lxml-2.2.2
-python setup.py install
 
 try:
     import lxml
 except ImportError:
     _HAS_LXML = False
-    print ('eroooooooooooooooooooooooooooooooooooooooooooooooooooooooor')
+    print ('error error error error')
 else:
     _HAS_LXML = True
-    print ('gooooooooooooooooooooooooooooooooooooooooooooooooooooooooooood')
+    print ('goood goood goood goood')
 
 from xml.dom import minidom
 import urllib
 import xml.etree.cElementTree as ET
 from xml.etree import ElementTree
-from lxml import etree
+from xml import etree
 import StringIO
 
 
