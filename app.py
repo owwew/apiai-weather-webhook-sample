@@ -103,7 +103,7 @@ def dojcmssearch(req):
     test = etree.parse(f)
     phrase = "voici les titres que je trouve"
     for titre in test.find("data").xpath("/dataset/data/field[@name='title']/text()"):
-        print (titre)
+        print (titre.encode('utf-8'))
         phrase = phrase + "\n; " + titre
     return {
         "speech": phrase.encode('utf-8'),
