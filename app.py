@@ -32,7 +32,7 @@ from xml.dom import minidom
 import urllib
 import xml.etree.cElementTree as ET
 from xml.etree import ElementTree
-from xml import etree
+from lxml import etree
 import StringIO
 
 
