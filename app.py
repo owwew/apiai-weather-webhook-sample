@@ -101,7 +101,7 @@ def dojcmssearch(req):
     xmldoc = ET.fromstring(get_web)
     f = StringIO.StringIO(get_web)
     test = etree.parse(f)
-    
+    print ('tetststststststststttttttttttttttttttttttttt')
     for titre in test.find("data").xpath("/dataset/data/field[@name='title']/text()"):
         print (titre) 
     return{}
