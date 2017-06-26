@@ -102,8 +102,11 @@ def dojcmssearch(req):
     f = StringIO.StringIO(get_web)
     test = etree.parse(f)
     for titre in test.find("data").xpath("/dataset/data/field[@name='title']/text()"):
-        print (titre) 
-    return {}
+        print (titre)
+        titre = titre + "\n" + titre
+    return {
+        "speech": titre,
+    }
         
 def get_neccesaire_wikipidia(query):
     phrase=query
