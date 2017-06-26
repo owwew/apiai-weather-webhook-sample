@@ -101,6 +101,8 @@ def dojcmssearch(req):
     xmldoc = ET.fromstring(get_web)
     f = StringIO.StringIO(get_web)
     test = etree.parse(f)
+    titre #CIIC
+    titre = "voila ce que j'ai trouve sur jcms:  " 
     for titre in test.find("data").xpath("/dataset/data/field[@name='title']/text()"):
         print (titre) 
     return {
@@ -148,7 +150,7 @@ def get_neccesaire(query):
     ici=phrase.find("adresse")     #chercher le mor cle "adresse" (ici recoit position du mot adresse)
     ici= ici+10                     #eplacer le cursus +8 pour passer au mot suivant 
     icii=phrase[ici:]              #prendre toute la chaine de caractere qui suit le mot adresse (ca doit etre l'adresse)
-    #print("le necessaire est ")    #trest pour voir si ca marche  
+    #print("le necessaire est ")    #test pour voir si ca marche  
     #print(icii)                    #test si ca marche 
     return (icii)
 
