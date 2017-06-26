@@ -17,6 +17,12 @@ from flask import Flask
 from flask import request
 from flask import make_response
 
+try:
+    import lxml
+except ImportError:
+    _HAS_LXML = False
+else:
+    _HAS_LXML = True
 
 from xml.dom import minidom
 import urllib
