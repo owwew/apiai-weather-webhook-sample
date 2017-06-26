@@ -106,7 +106,7 @@ def dojcmssearch(req):
         print (titre)
         phrase = phrase + "\n; " + titre
     return {
-        "speech": phrase,
+        "speech": phrase.encode('utf-8'),
     }
         
 def get_neccesaire_wikipidia(query):
