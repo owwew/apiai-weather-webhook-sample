@@ -101,12 +101,12 @@ def dojcmssearch(req):
     xmldoc = ET.fromstring(get_web)
     f = StringIO.StringIO(get_web)
     test = etree.parse(f)
-    titre = "voici les titres que je trouve"
+    phrase = "voici les titres que je trouve"
     for titre in test.find("data").xpath("/dataset/data/field[@name='title']/text()"):
         print (titre)
-        titre = titre + "\n" + titre
+        phrase = phrase + "\n; " + titre
     return {
-        "speech": titre,
+        "speech": phrase,
     }
         
 def get_neccesaire_wikipidia(query):
