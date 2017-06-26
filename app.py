@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+
 from __future__ import print_function
 from future.standard_library import install_aliases
 install_aliases()
@@ -16,6 +17,12 @@ import urllib2,urllib
 from flask import Flask
 from flask import request
 from flask import make_response
+
+yum install libxslt-devel libxml2-devel
+wget http://pypi.python.org/packages/source/l/lxml/lxml-2.2.2.tar.gz
+tar xzf lxml-2.2.2.tar.gz 
+cd lxml-2.2.2
+python setup.py install
 
 try:
     import lxml
