@@ -17,6 +17,15 @@ from flask import Flask
 from flask import request
 from flask import make_response
 
+
+from xml.dom import minidom
+import urllib
+import xml.etree.cElementTree as ET
+from xml.etree import ElementTree
+from lxml import etree
+import StringIO
+
+
 # Flask app should start in global layout
 app = Flask(__name__)
 
@@ -73,6 +82,21 @@ def dojcmssearch(req):
     search2 = search.replace(' ', '%20') #enlever les espaces
     print (search)
     print (search2)
+    recherche=search2
+    document = 'https://intranet.jalios.net/rest/search?text='
+    authkey = '&authKey=djI7am54MV81OTA2NDk7MTUyOTY1Njk1NDEyNztHRVQ7OzQ1OyQyYSQwNCRyZEJpTmtTbmZlTWwwTXk1akJENTdleHJXVmlIeWlYOVhuemEwOXBCUUZEUHdNNUU4NGtSTw=='
+    document = document + '' + recherche + '' + authkey
+    web = urllib.urlopen(document)
+    get_web = web.read()
+    xmldoc = ET.fromstring(get_web)
+    f = StringIO.StringIO(get_web)
+    test = etree.parse(f)
+    print 'voici les sujets que j ai trouve sur JCMS:\n'
+    for titre in test.find("data").xpath("/dataset/data/field[@name='title']/text()"):
+        print titre
+    
+        
+    
     return{}
         
 def get_neccesaire_wikipidia(query):
