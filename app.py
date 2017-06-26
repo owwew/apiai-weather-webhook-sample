@@ -21,8 +21,10 @@ try:
     import lxml
 except ImportError:
     _HAS_LXML = False
+    print "eroooooooooooooooooooooooooooooooooooooooooooooooooooooooor"
 else:
     _HAS_LXML = True
+    print "gooooooooooooooooooooooooooooooooooooooooooooooooooooooooooood"
 
 from xml.dom import minidom
 import urllib
