@@ -23,10 +23,10 @@ try:
     import lxml
 except ImportError:
     _HAS_LXML = False
-    print ('error error error error')
+    print ('error import of lxml')
 else:
     _HAS_LXML = True
-    print ('goood goood goood goood')
+    print ('succes import of lxml')
 
 from xml.dom import minidom
 import urllib
@@ -101,10 +101,11 @@ def dojcmssearch(req):
     xmldoc = ET.fromstring(get_web)
     f = StringIO.StringIO(get_web)
     test = etree.parse(f)
-    print ('tetststststststststtttttttttttttttttttthahahahttttt')
     for titre in test.find("data").xpath("/dataset/data/field[@name='title']/text()"):
         print (titre) 
-    return{}
+    return {
+        "speech": titre,
+    }
         
 def get_neccesaire_wikipidia(query):
     phrase=query
